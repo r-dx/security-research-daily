@@ -2,7 +2,9 @@
 
 ## Scheduled worksheet generation
 
-`.github/workflows/daily-research.yml` runs once daily at 02:17 UTC and supports manual dispatch. It:
+`.github/workflows/daily-research.yml` runs Monday and Thursday at 02:17 UTC and supports manual dispatch. It is part of a portfolio-wide rotation: secure-code validation runs Tuesday/Friday, dependency monitoring Wednesday/Saturday, and detection validation Sunday.
+
+This workflow:
 
 1. checks out this repository;
 2. installs the pinned test dependency;
@@ -13,4 +15,4 @@
 
 The workflow does not scan networks, contact targets, use repository secrets, or claim that the worksheet was executed. It uses the built-in `GITHUB_TOKEN` with `contents: write` only. All other permissions are disabled by default.
 
-Commits are made by the transparent workflow identity `github-actions[bot]` with a subject derived from the selected topic. A no-change run exits without a commit. Generated plans require manual evidence and review before their status can change.
+Commits use the transparent `github-actions[bot]` identity with a subject derived from the selected topic. A no-change run exits without a commit. Generated plans require manual evidence and review before their status can change.
