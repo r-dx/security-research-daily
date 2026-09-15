@@ -1,15 +1,15 @@
-name: Daily defensive research worksheet
+name: Scheduled defensive research worksheet
 
 on:
   schedule:
-    - cron: "17 2 * * *"
+    - cron: "17 2 * * 1,4"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: daily-research
+  group: scheduled-research
   cancel-in-progress: false
 
 jobs:
