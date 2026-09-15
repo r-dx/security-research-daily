@@ -1,0 +1,527 @@
+[
+  {
+    "title": "Authentication and session management",
+    "question": "How should session rotation and revocation behave after authentication state changes?",
+    "threat_model": "An attacker obtains a stale session identifier and attempts reuse after login, logout, or privilege change.",
+    "lab": [
+      "Record exact component versions and configuration",
+      "Use synthetic data in an isolated local environment",
+      "Define an expected allow/deny outcome before testing"
+    ],
+    "method": [
+      "Create the smallest reproducible fixture",
+      "Exercise normal, boundary, and malformed cases",
+      "Compare observed behavior with the predefined control",
+      "Preserve sanitized output and hashes"
+    ],
+    "evidence": [
+      "Environment and version manifest",
+      "Fixture or test-case identifier",
+      "Command or request transcript",
+      "Expected-versus-observed table",
+      "Authoritative reference links"
+    ],
+    "controls": [
+      "Strict input validation and canonicalization",
+      "Least privilege and explicit authorization",
+      "Fail-closed error handling",
+      "Security-relevant, privacy-aware logging",
+      "Regression tests for confirmed boundaries"
+    ],
+    "follow_up": [
+      "Which assumptions remain untested?",
+      "What could create false confidence?",
+      "Which regression test should be retained?"
+    ]
+  },
+  {
+    "title": "Access-control failures",
+    "question": "Can object authorization be enforced independently of client-supplied identifiers?",
+    "threat_model": "An authenticated low-privilege user changes an object identifier to access another user's local fixture.",
+    "lab": [
+      "Record exact component versions and configuration",
+      "Use synthetic data in an isolated local environment",
+      "Define an expected allow/deny outcome before testing"
+    ],
+    "method": [
+      "Create the smallest reproducible fixture",
+      "Exercise normal, boundary, and malformed cases",
+      "Compare observed behavior with the predefined control",
+      "Preserve sanitized output and hashes"
+    ],
+    "evidence": [
+      "Environment and version manifest",
+      "Fixture or test-case identifier",
+      "Command or request transcript",
+      "Expected-versus-observed table",
+      "Authoritative reference links"
+    ],
+    "controls": [
+      "Strict input validation and canonicalization",
+      "Least privilege and explicit authorization",
+      "Fail-closed error handling",
+      "Security-relevant, privacy-aware logging",
+      "Regression tests for confirmed boundaries"
+    ],
+    "follow_up": [
+      "Which assumptions remain untested?",
+      "What could create false confidence?",
+      "Which regression test should be retained?"
+    ]
+  },
+  {
+    "title": "Secure archive extraction",
+    "question": "How can archive entries be contained within an intended extraction root?",
+    "threat_model": "A crafted local archive contains absolute or parent-relative paths.",
+    "lab": [
+      "Record exact component versions and configuration",
+      "Use synthetic data in an isolated local environment",
+      "Define an expected allow/deny outcome before testing"
+    ],
+    "method": [
+      "Create the smallest reproducible fixture",
+      "Exercise normal, boundary, and malformed cases",
+      "Compare observed behavior with the predefined control",
+      "Preserve sanitized output and hashes"
+    ],
+    "evidence": [
+      "Environment and version manifest",
+      "Fixture or test-case identifier",
+      "Command or request transcript",
+      "Expected-versus-observed table",
+      "Authoritative reference links"
+    ],
+    "controls": [
+      "Strict input validation and canonicalization",
+      "Least privilege and explicit authorization",
+      "Fail-closed error handling",
+      "Security-relevant, privacy-aware logging",
+      "Regression tests for confirmed boundaries"
+    ],
+    "follow_up": [
+      "Which assumptions remain untested?",
+      "What could create false confidence?",
+      "Which regression test should be retained?"
+    ]
+  },
+  {
+    "title": "Path traversal",
+    "question": "Which canonicalization and containment checks prevent filesystem escape?",
+    "threat_model": "Untrusted local input includes encoded separators and parent-directory segments.",
+    "lab": [
+      "Record exact component versions and configuration",
+      "Use synthetic data in an isolated local environment",
+      "Define an expected allow/deny outcome before testing"
+    ],
+    "method": [
+      "Create the smallest reproducible fixture",
+      "Exercise normal, boundary, and malformed cases",
+      "Compare observed behavior with the predefined control",
+      "Preserve sanitized output and hashes"
+    ],
+    "evidence": [
+      "Environment and version manifest",
+      "Fixture or test-case identifier",
+      "Command or request transcript",
+      "Expected-versus-observed table",
+      "Authoritative reference links"
+    ],
+    "controls": [
+      "Strict input validation and canonicalization",
+      "Least privilege and explicit authorization",
+      "Fail-closed error handling",
+      "Security-relevant, privacy-aware logging",
+      "Regression tests for confirmed boundaries"
+    ],
+    "follow_up": [
+      "Which assumptions remain untested?",
+      "What could create false confidence?",
+      "Which regression test should be retained?"
+    ]
+  },
+  {
+    "title": "SSRF defenses",
+    "question": "Which URL validation controls prevent requests to disallowed address ranges?",
+    "threat_model": "A local URL parser receives alternate IP representations, redirects, and ambiguous host syntax; no request leaves the lab.",
+    "lab": [
+      "Record exact component versions and configuration",
+      "Use synthetic data in an isolated local environment",
+      "Define an expected allow/deny outcome before testing"
+    ],
+    "method": [
+      "Create the smallest reproducible fixture",
+      "Exercise normal, boundary, and malformed cases",
+      "Compare observed behavior with the predefined control",
+      "Preserve sanitized output and hashes"
+    ],
+    "evidence": [
+      "Environment and version manifest",
+      "Fixture or test-case identifier",
+      "Command or request transcript",
+      "Expected-versus-observed table",
+      "Authoritative reference links"
+    ],
+    "controls": [
+      "Strict input validation and canonicalization",
+      "Least privilege and explicit authorization",
+      "Fail-closed error handling",
+      "Security-relevant, privacy-aware logging",
+      "Regression tests for confirmed boundaries"
+    ],
+    "follow_up": [
+      "Which assumptions remain untested?",
+      "What could create false confidence?",
+      "Which regression test should be retained?"
+    ]
+  },
+  {
+    "title": "HTTP request smuggling fundamentals",
+    "question": "Where can front-end and back-end HTTP framing interpretations diverge?",
+    "threat_model": "Two local parsers disagree on message length in a synthetic byte fixture.",
+    "lab": [
+      "Record exact component versions and configuration",
+      "Use synthetic data in an isolated local environment",
+      "Define an expected allow/deny outcome before testing"
+    ],
+    "method": [
+      "Create the smallest reproducible fixture",
+      "Exercise normal, boundary, and malformed cases",
+      "Compare observed behavior with the predefined control",
+      "Preserve sanitized output and hashes"
+    ],
+    "evidence": [
+      "Environment and version manifest",
+      "Fixture or test-case identifier",
+      "Command or request transcript",
+      "Expected-versus-observed table",
+      "Authoritative reference links"
+    ],
+    "controls": [
+      "Strict input validation and canonicalization",
+      "Least privilege and explicit authorization",
+      "Fail-closed error handling",
+      "Security-relevant, privacy-aware logging",
+      "Regression tests for confirmed boundaries"
+    ],
+    "follow_up": [
+      "Which assumptions remain untested?",
+      "What could create false confidence?",
+      "Which regression test should be retained?"
+    ]
+  },
+  {
+    "title": "Parser differentials",
+    "question": "How should inconsistent parser interpretations be detected and rejected?",
+    "threat_model": "Two local parsers interpret duplicate or ambiguous fields differently.",
+    "lab": [
+      "Record exact component versions and configuration",
+      "Use synthetic data in an isolated local environment",
+      "Define an expected allow/deny outcome before testing"
+    ],
+    "method": [
+      "Create the smallest reproducible fixture",
+      "Exercise normal, boundary, and malformed cases",
+      "Compare observed behavior with the predefined control",
+      "Preserve sanitized output and hashes"
+    ],
+    "evidence": [
+      "Environment and version manifest",
+      "Fixture or test-case identifier",
+      "Command or request transcript",
+      "Expected-versus-observed table",
+      "Authoritative reference links"
+    ],
+    "controls": [
+      "Strict input validation and canonicalization",
+      "Least privilege and explicit authorization",
+      "Fail-closed error handling",
+      "Security-relevant, privacy-aware logging",
+      "Regression tests for confirmed boundaries"
+    ],
+    "follow_up": [
+      "Which assumptions remain untested?",
+      "What could create false confidence?",
+      "Which regression test should be retained?"
+    ]
+  },
+  {
+    "title": "Deserialization risks",
+    "question": "How can data-only formats and strict schemas reduce unsafe object construction?",
+    "threat_model": "An untrusted local fixture attempts to select unexpected types or fields.",
+    "lab": [
+      "Record exact component versions and configuration",
+      "Use synthetic data in an isolated local environment",
+      "Define an expected allow/deny outcome before testing"
+    ],
+    "method": [
+      "Create the smallest reproducible fixture",
+      "Exercise normal, boundary, and malformed cases",
+      "Compare observed behavior with the predefined control",
+      "Preserve sanitized output and hashes"
+    ],
+    "evidence": [
+      "Environment and version manifest",
+      "Fixture or test-case identifier",
+      "Command or request transcript",
+      "Expected-versus-observed table",
+      "Authoritative reference links"
+    ],
+    "controls": [
+      "Strict input validation and canonicalization",
+      "Least privilege and explicit authorization",
+      "Fail-closed error handling",
+      "Security-relevant, privacy-aware logging",
+      "Regression tests for confirmed boundaries"
+    ],
+    "follow_up": [
+      "Which assumptions remain untested?",
+      "What could create false confidence?",
+      "Which regression test should be retained?"
+    ]
+  },
+  {
+    "title": "Race conditions",
+    "question": "Which atomic operations preserve authorization and state invariants under concurrency?",
+    "threat_model": "Concurrent local workers attempt a conflicting state transition.",
+    "lab": [
+      "Record exact component versions and configuration",
+      "Use synthetic data in an isolated local environment",
+      "Define an expected allow/deny outcome before testing"
+    ],
+    "method": [
+      "Create the smallest reproducible fixture",
+      "Exercise normal, boundary, and malformed cases",
+      "Compare observed behavior with the predefined control",
+      "Preserve sanitized output and hashes"
+    ],
+    "evidence": [
+      "Environment and version manifest",
+      "Fixture or test-case identifier",
+      "Command or request transcript",
+      "Expected-versus-observed table",
+      "Authoritative reference links"
+    ],
+    "controls": [
+      "Strict input validation and canonicalization",
+      "Least privilege and explicit authorization",
+      "Fail-closed error handling",
+      "Security-relevant, privacy-aware logging",
+      "Regression tests for confirmed boundaries"
+    ],
+    "follow_up": [
+      "Which assumptions remain untested?",
+      "What could create false confidence?",
+      "Which regression test should be retained?"
+    ]
+  },
+  {
+    "title": "Secrets management",
+    "question": "How can secret exposure be prevented in source, logs, artifacts, and process arguments?",
+    "threat_model": "A synthetic canary secret crosses local build and logging boundaries.",
+    "lab": [
+      "Record exact component versions and configuration",
+      "Use synthetic data in an isolated local environment",
+      "Define an expected allow/deny outcome before testing"
+    ],
+    "method": [
+      "Create the smallest reproducible fixture",
+      "Exercise normal, boundary, and malformed cases",
+      "Compare observed behavior with the predefined control",
+      "Preserve sanitized output and hashes"
+    ],
+    "evidence": [
+      "Environment and version manifest",
+      "Fixture or test-case identifier",
+      "Command or request transcript",
+      "Expected-versus-observed table",
+      "Authoritative reference links"
+    ],
+    "controls": [
+      "Strict input validation and canonicalization",
+      "Least privilege and explicit authorization",
+      "Fail-closed error handling",
+      "Security-relevant, privacy-aware logging",
+      "Regression tests for confirmed boundaries"
+    ],
+    "follow_up": [
+      "Which assumptions remain untested?",
+      "What could create false confidence?",
+      "Which regression test should be retained?"
+    ]
+  },
+  {
+    "title": "Dependency and supply-chain security",
+    "question": "How should provenance, pinning, and advisory evidence guide dependency updates?",
+    "threat_model": "A build consumes a tampered or vulnerable sample package declaration.",
+    "lab": [
+      "Record exact component versions and configuration",
+      "Use synthetic data in an isolated local environment",
+      "Define an expected allow/deny outcome before testing"
+    ],
+    "method": [
+      "Create the smallest reproducible fixture",
+      "Exercise normal, boundary, and malformed cases",
+      "Compare observed behavior with the predefined control",
+      "Preserve sanitized output and hashes"
+    ],
+    "evidence": [
+      "Environment and version manifest",
+      "Fixture or test-case identifier",
+      "Command or request transcript",
+      "Expected-versus-observed table",
+      "Authoritative reference links"
+    ],
+    "controls": [
+      "Strict input validation and canonicalization",
+      "Least privilege and explicit authorization",
+      "Fail-closed error handling",
+      "Security-relevant, privacy-aware logging",
+      "Regression tests for confirmed boundaries"
+    ],
+    "follow_up": [
+      "Which assumptions remain untested?",
+      "What could create false confidence?",
+      "Which regression test should be retained?"
+    ]
+  },
+  {
+    "title": "Logging and detection engineering",
+    "question": "Which audit events support investigation without exposing sensitive values?",
+    "threat_model": "A synthetic account-abuse sequence must remain reconstructable from redacted logs.",
+    "lab": [
+      "Record exact component versions and configuration",
+      "Use synthetic data in an isolated local environment",
+      "Define an expected allow/deny outcome before testing"
+    ],
+    "method": [
+      "Create the smallest reproducible fixture",
+      "Exercise normal, boundary, and malformed cases",
+      "Compare observed behavior with the predefined control",
+      "Preserve sanitized output and hashes"
+    ],
+    "evidence": [
+      "Environment and version manifest",
+      "Fixture or test-case identifier",
+      "Command or request transcript",
+      "Expected-versus-observed table",
+      "Authoritative reference links"
+    ],
+    "controls": [
+      "Strict input validation and canonicalization",
+      "Least privilege and explicit authorization",
+      "Fail-closed error handling",
+      "Security-relevant, privacy-aware logging",
+      "Regression tests for confirmed boundaries"
+    ],
+    "follow_up": [
+      "Which assumptions remain untested?",
+      "What could create false confidence?",
+      "Which regression test should be retained?"
+    ]
+  },
+  {
+    "title": "Container hardening",
+    "question": "Which runtime restrictions reduce impact from a compromised local container?",
+    "threat_model": "A lab container attempts unnecessary filesystem, capability, and network access.",
+    "lab": [
+      "Record exact component versions and configuration",
+      "Use synthetic data in an isolated local environment",
+      "Define an expected allow/deny outcome before testing"
+    ],
+    "method": [
+      "Create the smallest reproducible fixture",
+      "Exercise normal, boundary, and malformed cases",
+      "Compare observed behavior with the predefined control",
+      "Preserve sanitized output and hashes"
+    ],
+    "evidence": [
+      "Environment and version manifest",
+      "Fixture or test-case identifier",
+      "Command or request transcript",
+      "Expected-versus-observed table",
+      "Authoritative reference links"
+    ],
+    "controls": [
+      "Strict input validation and canonicalization",
+      "Least privilege and explicit authorization",
+      "Fail-closed error handling",
+      "Security-relevant, privacy-aware logging",
+      "Regression tests for confirmed boundaries"
+    ],
+    "follow_up": [
+      "Which assumptions remain untested?",
+      "What could create false confidence?",
+      "Which regression test should be retained?"
+    ]
+  },
+  {
+    "title": "API authorization",
+    "question": "How can endpoint and resource-level authorization be verified systematically?",
+    "threat_model": "Synthetic roles call a local API fixture across permitted and denied resources.",
+    "lab": [
+      "Record exact component versions and configuration",
+      "Use synthetic data in an isolated local environment",
+      "Define an expected allow/deny outcome before testing"
+    ],
+    "method": [
+      "Create the smallest reproducible fixture",
+      "Exercise normal, boundary, and malformed cases",
+      "Compare observed behavior with the predefined control",
+      "Preserve sanitized output and hashes"
+    ],
+    "evidence": [
+      "Environment and version manifest",
+      "Fixture or test-case identifier",
+      "Command or request transcript",
+      "Expected-versus-observed table",
+      "Authoritative reference links"
+    ],
+    "controls": [
+      "Strict input validation and canonicalization",
+      "Least privilege and explicit authorization",
+      "Fail-closed error handling",
+      "Security-relevant, privacy-aware logging",
+      "Regression tests for confirmed boundaries"
+    ],
+    "follow_up": [
+      "Which assumptions remain untested?",
+      "What could create false confidence?",
+      "Which regression test should be retained?"
+    ]
+  },
+  {
+    "title": "Cryptographic implementation mistakes",
+    "question": "Which misuse-resistant APIs and test vectors catch common implementation errors?",
+    "threat_model": "A local implementation uses unsafe nonce, mode, comparison, or randomness choices.",
+    "lab": [
+      "Record exact component versions and configuration",
+      "Use synthetic data in an isolated local environment",
+      "Define an expected allow/deny outcome before testing"
+    ],
+    "method": [
+      "Create the smallest reproducible fixture",
+      "Exercise normal, boundary, and malformed cases",
+      "Compare observed behavior with the predefined control",
+      "Preserve sanitized output and hashes"
+    ],
+    "evidence": [
+      "Environment and version manifest",
+      "Fixture or test-case identifier",
+      "Command or request transcript",
+      "Expected-versus-observed table",
+      "Authoritative reference links"
+    ],
+    "controls": [
+      "Strict input validation and canonicalization",
+      "Least privilege and explicit authorization",
+      "Fail-closed error handling",
+      "Security-relevant, privacy-aware logging",
+      "Regression tests for confirmed boundaries"
+    ],
+    "follow_up": [
+      "Which assumptions remain untested?",
+      "What could create false confidence?",
+      "Which regression test should be retained?"
+    ]
+  }
+]

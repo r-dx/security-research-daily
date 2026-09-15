@@ -1,0 +1,16 @@
+# Automation disclosure
+
+## Scheduled worksheet generation
+
+`.github/workflows/daily-research.yml` runs once daily at 02:17 UTC and supports manual dispatch. It:
+
+1. checks out this repository;
+2. installs the pinned test dependency;
+3. runs all local tests;
+4. chooses a curated topic deterministically from the UTC date;
+5. creates `research/YYYY/YYYY-MM-DD-slug.md` with status `Planned`;
+6. commits only if that tracked file is new or materially different.
+
+The workflow does not scan networks, contact targets, use repository secrets, or claim that the worksheet was executed. It uses the built-in `GITHUB_TOKEN` with `contents: write` only. All other permissions are disabled by default.
+
+Commits are made by the transparent workflow identity `github-actions[bot]` with a subject derived from the selected topic. A no-change run exits without a commit. Generated plans require manual evidence and review before their status can change.

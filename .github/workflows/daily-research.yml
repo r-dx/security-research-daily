@@ -1,0 +1,56 @@
+name: Daily defensive research worksheet
+
+on:
+  schedule:
+    - cron: "17 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-research
+  cancel-in-progress: false
+
+jobs:
+  validate-and-prepare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        with:
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install test dependency
+        run: python -m pip install --requirement requirements-dev.txt
+      - name: Validate repository
+        run: python -m pytest
+      - name: Prepare planned worksheet
+        id: generate
+        run: |
+          result="$(python scripts/generate_worksheet.py)"
+          printf '%s\n' "$result"
+          title="$(python -c 'import json,sys; print(json.load(sys.stdin)["title"])' <<<"$result")"
+          printf 'title=%s\n' "$title" >> "$GITHUB_OUTPUT"
+      - name: Commit meaningful change
+        env:
+          TOPIC_TITLE: ${{ steps.generate.outputs.title }}
+        run: |
+          if git diff --quiet && [ -z "$(git status --porcelain --untracked-files=normal)" ]; then
+            echo "No tracked artifact changed."
+            exit 0
+          fi
+          git add research/
+          if git diff --cached --quiet; then
+            echo "No research artifact changed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "research: add ${TOPIC_TITLE} review worksheet"
+          git push
