@@ -2,7 +2,7 @@
 
 Reproducible defensive security notes, controlled-lab worksheets, and research observations maintained by **Rohit Dixit — Cybersecurity Researcher**.
 
-[rohitdixit.dev](https://rohitdixit.dev)
+[rohitdixit.dev](https://rohitdixit.dev) 
 
 ## Scope
 
