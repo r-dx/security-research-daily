@@ -1,5 +1,5 @@
 # Cryptographic implementation mistakes
-
+ 
 - Date: 2026-09-15
 - Status: **Planned**
 - Author: Rohit Dixit — Cybersecurity Researcher
