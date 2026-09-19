@@ -1,6 +1,6 @@
 # Automation disclosure
 
-## Scheduled worksheet generation
+## Scheduled worksheet generation 
 
 `.github/workflows/daily-research.yml` runs Monday and Thursday at 02:17 UTC and supports manual dispatch. It is part of a portfolio-wide rotation: secure-code validation runs Tuesday/Friday, dependency monitoring Wednesday/Saturday, and detection validation Sunday.
 
